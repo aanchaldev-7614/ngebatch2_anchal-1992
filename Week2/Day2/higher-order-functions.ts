@@ -45,7 +45,7 @@ export function getGreetings (developers: Developer[]) {
   return emp ;
 }
 const greetingList  = getGreetings(empDetails);
-console.log("greetingList>>",greetingList);
+console.log("getGreetings>>",greetingList);
 
 // isJSComing should return true if the array contains at least one developer whose language is Javascript.
 // For the list above it would return true.
@@ -60,7 +60,7 @@ export function isJSComing (developers: Developer[]) {
 }
 
 const isJSComingOutput = isJSComing(empDetails);
-console.log("isJSComingOutput>>",isJSComingOutput);
+console.log("isJSComing>>",isJSComingOutput);
 
 // getFirstPythonDeveloper should return the first developer in the array whose language is Python
 // You should return a string formatted like '<firstName>, <country>', or the string 'none' if no python developers are present.
@@ -71,7 +71,7 @@ export function getFirstPythonDeveloper (developers: Developer[]) {
 
 }
 const devName = getFirstPythonDeveloper(empDetails);
-console.log("devName>>",devName);
+console.log("getFirstPythonDeveloper>>",devName);
 
 // getAverageAge should return the average age of the developers (rounded down).
 // If there are no developers, return -1
@@ -81,7 +81,7 @@ console.log("devName>>",devName);
 export function getAverageAge(developers: Developer[]) {
   let ages = developers.map(person => person.age);
   //const average = ages => ages.reduce((prev, curr) => prev + curr) / ages.length;
-  console.log(ages);
+  console.log("getAverageAge>",ages);
 }
 getAverageAge(empDetails);
 
@@ -93,7 +93,7 @@ getAverageAge(empDetails);
 // NB. Developers could know any language (not just JS or Python), so the keys of the object will depend on what developers you get passed.
 export function getLanguageCounts (developers: Developer[]) {
   let language = developers.map(person => person.language);
-  console.log(language);
+  console.log("getLanguageCounts>"+language);
 }
 getLanguageCounts(empDetails);
 
@@ -101,12 +101,21 @@ getLanguageCounts(empDetails);
 // In case of a tie, include all same-age developers listed in the same order as they appeared in the original input array.
 // For the list above, it would return ['Aisha']
 export function getOldest (developers: Developer[]) {
-
+  developers.sort((a, b) => b.age - a.age); 
+  const firstName = developers[0].firstName; 
+  return firstName;
 }
+const firstName = getOldest(empDetails);
+console.log("getOldest>",firstName);
 
 // isGlobalGroup should return true if the list contains a developer from each of these 5 zones:
 // 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania'
 // For the list above, it would return false
 export function isGlobalGroup (developers: Developer[]) {
+  return ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
+  .every(r => developers.some(d => d.continent === r))
 
 }
+const globalGroupList = isGlobalGroup(empDetails);
+console.log("isGlobalGroup>",globalGroupList);
+
