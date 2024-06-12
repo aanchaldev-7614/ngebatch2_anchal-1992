@@ -26,7 +26,13 @@ const academyUsers: SomeUsers = {
 
 const ageUpdater = (originalUsers: SomeUsers) => {
   // TODO: Your code goes here
+  originalUsers.shaw.age = 21;
+  originalUsers.valentine.age = 21;
+  console.log(originalUsers);
+
 }
+
+ageUpdater(academyUsers);
 
 // Call the Age Updater function
 const updatedUsers = ageUpdater(academyUsers)
