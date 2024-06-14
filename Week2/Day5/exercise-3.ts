@@ -86,7 +86,7 @@ const queryFood = (foodId: number | null): Promise<Food> =>
 
 // Fetch data
 const findFavouriteFood = (name: string) =>
-  new Promise((resolve, reject) => {
+    new Promise((resolve, reject) => {
     queryUser(name)
       .then((person) => queryFood(person.food))
       .then((foodItem) => resolve(`${name} likes ${foodItem.name}`))
@@ -101,6 +101,7 @@ console.log('Results:')
 
 const tasks = []
 userData.forEach((user) => {
+  console.log("entr")
   tasks.push(findFavouriteFood(user.name))
 })
 
