@@ -7,7 +7,6 @@ export function add(a: any, b: any) {
 }
 
 export function safeMultiply(a: any, b: any) {
-  console.log("a>>",a)
   if (isNaN(a) || isNaN(b)) {
     throw new Error(`Parameters a and b must be numeric but got a='${a}' and b='${b}'`)
   }

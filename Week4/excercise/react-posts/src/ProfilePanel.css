@@ -1,0 +1,14 @@
+
+
+  .profileview {
+    text-align: center;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .user-image {
+    border-radius: 10px;
+    height: 150px;
+    width: 150px;
+  }
