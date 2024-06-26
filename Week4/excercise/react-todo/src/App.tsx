@@ -1,4 +1,6 @@
 import './App.css'
+import TodoItem from './TodoItem'
+
 
 const App = () => {
   // eslint-disable-next-line
@@ -17,7 +19,9 @@ const App = () => {
 
   return (
     <div>
+   
       <h1>Todo</h1>
+      <TodoItem />
       { /* your code goes here... */ }
     </div>
   )
