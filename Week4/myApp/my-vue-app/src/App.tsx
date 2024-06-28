@@ -1,5 +1,6 @@
 import './App.css'
 import Greeter,{Hello,GetQuote} from "./component/greeter"
+import catalog from "./component/catalog"
 import StateDemo from "./component/StateDemo"
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
   return (
     <>
     <h1 >NGE Lernings</h1>
+    <catalog/>
     <Greeter name="anchal"/>
     <StateDemo/>
     <Hello/>
