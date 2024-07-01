@@ -28,7 +28,8 @@ const ageUpdater = (originalUsers: SomeUsers) => {
   // TODO: Your code goes here
   originalUsers.shaw.age = 21;
   originalUsers.valentine.age = 21;
-  console.log(originalUsers);
+  console.log("user-",originalUsers);
+  return originalUsers;
 
 }
 

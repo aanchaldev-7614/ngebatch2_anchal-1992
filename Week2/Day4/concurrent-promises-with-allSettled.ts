@@ -19,7 +19,9 @@ const boomBox = () =>
       // An error here blows the whole stack even if there is a promise.catch()
       // throw new Error('Database goes boom') 
     }, 750)
-  })
+  }).catch(function(e) {
+    console.log("Database goes boom"); 
+  });
 
 // An array of Promises
 const tasks = [waitOne(), waitTwo(), waitOne(), boomBox()]
@@ -33,7 +35,7 @@ const errorHandler = (someError: any) => {
 }
 
 console.log('Start now...')
-Promise.allSettled(tasks)
+await (Promise as any).allSettled(tasks)
   .then(successReport) // [1,2,1, Boom] an array of all the Settled values
   .catch(errorHandler) // Not invoked even if there is an Error
 console.log('...Done')
